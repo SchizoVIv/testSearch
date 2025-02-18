@@ -1,0 +1,21 @@
+.parentContainer {
+  -webkit-transition: height 0.5s ease;
+  -o-transition: height 0.5s ease;
+  transition: height 0.5s ease;
+  &.animate {
+    height: 100px;
+  }
+}
+
+.message {
+  padding-left: clamp(16px, 6vw, 80px);
+  padding-right: clamp(16px, 6vw, 80px);
+  margin-top: 40px;
+  color: #787878;
+}
+
+.searchContainer {
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}

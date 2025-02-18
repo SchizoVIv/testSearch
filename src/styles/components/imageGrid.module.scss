@@ -1,0 +1,115 @@
+@-webkit-keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+.imageGrid {
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 8px 1fr 8px 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding-left: clamp(16px, 6vw, 80px);
+  padding-right: clamp(16px, 6vw, 80px);
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.imageGrid__card {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  border: 1px solid #EBEBEB;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  -o-transition: transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  z-index: 3;
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #EBEBEB;
+  border-radius: 4px;
+  -webkit-animation: pulse 1.5s infinite;
+          animation: pulse 1.5s infinite;
+}
+
+.errorPlaceholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .imageGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .imageGrid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .imageGrid {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .placeholder {
+    -webkit-animation: none;
+            animation: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .imageGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -1,0 +1,45 @@
+.popupOverlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+  z-index: 1000;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.popupContent {
+  max-width: 90.5vw;
+  max-height: 90.5vh;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  object-fit: contain;
+
+  .popupOverlay.open & {
+    opacity: 1;
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 50%;
+  background-color: white;
+  user-select: none;
+  cursor: pointer;
+}
